@@ -1,4 +1,4 @@
 # This contains my learning of CUDA C
-Including
-=========================================
+##Including
+
 * Professional CUDA C programming (Book);
