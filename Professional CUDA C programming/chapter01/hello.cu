@@ -1,19 +1,23 @@
+#include "../common/common.h"
 #include <stdio.h>
 
-__global__ void helloFromGPU(void)
+/*
+ * A simple introduction to programming in CUDA. This program prints "Hello
+ * World from GPU! from 10 CUDA threads running on the GPU.
+ */
+
+__global__ void helloFromGPU()
 {
-    if (threadIdx.x == 5)
-    {
-        printf("Hello World from GPU thread %d! \n", threadIdx.x);
-    }
-    
+    printf("Hello World from GPU!\n");
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
-    printf("Hello World from CPU ! \n");
-    helloFromGPU <<<1,10>>>();
-    cudaDeviceReset();
-    //cudaDeviceSynchronize();
+    printf("Hello World from CPU!\n");
+
+    helloFromGPU <<<1, 1>>>();
+    CHECK(cudaDeviceReset());
     return 0;
 }
+
+
