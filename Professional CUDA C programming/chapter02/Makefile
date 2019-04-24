@@ -1,6 +1,7 @@
 C_APPS = sumArraysOnHost
 
-CU_APPS = checkDimension defineGridBlock sumArraysOnGPU-small-case sumArraysOnGPU-timer
+CU_APPS = checkDimension defineGridBlock sumArraysOnGPU-small-case sumArraysOnGPU-timer \
+		  checkThreadIndex
 
 all:${C_APPS} ${CU_APPS}
 
